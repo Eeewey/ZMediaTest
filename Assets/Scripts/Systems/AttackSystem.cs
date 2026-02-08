@@ -17,13 +17,13 @@ public partial struct AttackSystem : ISystem
                      RefRO<AttackRange>,
                      RefRO<LocalTransform>>())
         {
-
-            cooldown.ValueRW.TimeLeft -= dt;
+            if (cooldown.ValueRW.TimeLeft >= 0f)
+            {
+                cooldown.ValueRW.TimeLeft -= dt;
+                continue;
+            }
 
             if (unitState.ValueRO.Value != UnitStateEnum.Attack)
-                continue;
-
-            if (cooldown.ValueRW.TimeLeft > 0f)
                 continue;
 
             if (!SystemAPI.Exists(target.ValueRO.Value))
