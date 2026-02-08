@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 551e74bacd93d4f99bc7d053400b140d, type: 3}
+  m_Name: UnitStatsConfig1
+  m_EditorClassIdentifier: 
+  UnitInTeamCount: 20
+  TeamStartPoses:
+  - {x: 0, y: 0, z: -10}
+  - {x: 0, y: 0, z: 0}
+  baseHp: 100
+  baseAtk: 10
+  baseSpd: 10
+  baseAtkSpd: 1
+  AttackRange: 1
+  FormStats:
+  - FormType: 0
+    Params:
+    - StatType: 0
+      Value: 100
+    - StatType: 1
+      Value: 10
+  - FormType: 1
+    Params:
+    - StatType: 0
+      Value: 50
+    - StatType: 1
+      Value: 20
+  ColorStats:
+  - ColorType: 0
+    Params:
+    - StatType: 0
+      Value: 0
+    - StatType: 1
+      Value: -15
+    - StatType: 2
+      Value: 10
+    - StatType: 3
+      Value: 4
+  - ColorType: 1
+    Params:
+    - StatType: 0
+      Value: -50
+    - StatType: 1
+      Value: 20
+    - StatType: 2
+      Value: -5
+    - StatType: 3
+      Value: 0
+  - ColorType: 2
+    Params:
+    - StatType: 0
+      Value: 200
+    - StatType: 1
+      Value: 40
+    - StatType: 2
+      Value: -9
+    - StatType: 3
+      Value: 0
+  SizeStats:
+  - SizeType: 0
+    Params:
+    - StatType: 0
+      Value: 50
+  - SizeType: 1
+    Params:
+    - StatType: 0
+      Value: -50
+  ColorsUnit:
+  - {r: 0, g: 0, b: 1, a: 1}
+  - {r: 0, g: 1, b: 0, a: 1}
+  - {r: 1, g: 0, b: 0, a: 1}
+  VisualScales:
+  - 1.5
+  - 0.7
