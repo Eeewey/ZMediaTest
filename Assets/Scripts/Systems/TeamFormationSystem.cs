@@ -7,10 +7,17 @@ using Unity.Transforms;
 
 public partial struct TeamFormationSystem : ISystem
 {
+    public void OnCreate(ref SystemState state)
+    {
+        state.RequireForUpdate<UnitNeedFormationTag>();
+    }
+
     public void OnUpdate(ref SystemState state)
     {
         var ecb = new EntityCommandBuffer(Allocator.Temp);
-        var teamConfig = SystemAPI.GetSingleton<TeamConfigBlob>();
+
+        if (!SystemAPI.TryGetSingleton<TeamConfigBlob>(out var teamConfig))
+            return;
 
         var spacing = 1.5f;
         var lineWidth = 5;

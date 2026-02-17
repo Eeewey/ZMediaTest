@@ -10,6 +10,10 @@ public partial struct UnitSpawnerSystem : ISystem
     {
         state.RequireForUpdate<UnitStatsConfigBlob>();
         state.RequireForUpdate<UnitPrefabs>();
+        state.RequireForUpdate<UnitBaseStats>();
+        state.RequireForUpdate<UnitStatsConfigBlob>();
+        state.RequireForUpdate<TeamConfigBlob>();
+        state.RequireForUpdate<AttackRange>();
     }
 
     [BurstCompile]

@@ -6,10 +6,18 @@ using Unity.Transforms;
 
 public partial struct UpdateVisualSystem : ISystem
 {
+    public void OnCreate(ref SystemState state)
+    {
+        state.RequireForUpdate<UnitsVisualConfigBlob>();
+        state.RequireForUpdate<UnitNeedVisualUpdateTag>();
+    }
+
     public void OnUpdate(ref SystemState state)
     {
         var ecb = new EntityCommandBuffer(Allocator.Temp);
-        var visualConfig = SystemAPI.GetSingleton<UnitsVisualConfigBlob>();
+
+        if (!SystemAPI.TryGetSingleton<UnitsVisualConfigBlob>(out var visualConfig))
+            return;
 
         foreach (var (data, visualEntity, transform, entity) in SystemAPI.Query<
                 RefRO<UnitData>,

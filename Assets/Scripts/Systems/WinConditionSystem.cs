@@ -10,10 +10,6 @@ public partial struct WinConditionSystem : ISystem
 
     public void OnUpdate(ref SystemState state)
     {
-        // if (SystemAPI.TryGetSingleton<GameOver>(out var gameOver))
-        //     return;
-
-
         var teamsCount = new Dictionary<int, int>();
 
         foreach (var data in SystemAPI.Query<RefRO<UnitData>>())
