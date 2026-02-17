@@ -9,6 +9,7 @@ public partial struct TeamFormationSystem : ISystem
 {
     public void OnCreate(ref SystemState state)
     {
+        state.RequireForUpdate<TeamConfigBlob>();
         state.RequireForUpdate<UnitNeedFormationTag>();
     }
 
